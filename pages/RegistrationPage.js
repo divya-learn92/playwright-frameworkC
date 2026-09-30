@@ -14,7 +14,9 @@ class RegistrationPage{
        this.hobbiesMultiDropdown= page.locator('#hobbies');
        this.signUpButton = page.getByRole('button',{name:'Sign Up'});
     }
- async registerNewUser(){
-    
+ async registerNewUser(name,password,email){
+    await this.enterText(this.nameField,name);
+    await this.enterText(this.emailField,email);
+     await this.enterText(this.passwordField,password);
  }
 }
